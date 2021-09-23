@@ -32,11 +32,7 @@ const prodConfig = defineConfig({
   },
   plugins: [
     dts({
-      insertTypesEntry: true,
-      compilerOptions: {
-        noEmit: false,
-        declaration: true
-      }
+      insertTypesEntry: true
     })
   ]
 })
