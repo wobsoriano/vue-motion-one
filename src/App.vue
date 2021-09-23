@@ -7,7 +7,7 @@ const motions = useMotions()
 <template>
   <div
   class="box"
-  v-motion="'motion'"
+  v-animate="'motion'"
   :keyframes="{ rotate: 90 }"
   :options="{
     duration: 0.5,

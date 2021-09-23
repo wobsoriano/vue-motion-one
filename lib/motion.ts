@@ -3,10 +3,6 @@ import {
     Directive,
     VNode,
     DirectiveBinding,
-    Ref,
-    triggerRef,
-    shallowRef,
-    inject
 } from 'vue'
 import {
     animate,
@@ -16,7 +12,9 @@ import {
 
 type AnimationControlMap = Record<string, AnimationControls>
 
-const directive = (motionState: Ref<AnimationControlMap>): Directive<HTMLElement | SVGElement> => {
+const motionState: AnimationControlMap = {}
+
+const directive = (): Directive<HTMLElement | SVGElement> => {
     const register = (
         el: HTMLElement | SVGElement, 
         binding: DirectiveBinding,
@@ -32,7 +30,7 @@ const directive = (motionState: Ref<AnimationControlMap>): Directive<HTMLElement
         const key = binding.value || node.key
         
         // Cleanup previous animation if it exists
-        if (key && motionState.value[key]) motionState.value[key].stop()
+        if (key && motionState[key]) motionState[key].stop()
 
         if (!node.props?.keyframes) {
             console.error(
@@ -45,13 +43,13 @@ const directive = (motionState: Ref<AnimationControlMap>): Directive<HTMLElement
         // Check if arg stagger is present
         if (binding.arg && binding.arg === 'stagger') {
             // @ts-ignore
-            const childElements = node?.children?.map((i) => i.el)
+            const childrenElements = node?.children?.map((i) => i.el)
             const options = {
                 ...node.props?.options,
-                delay: stagger(0.1)
+                delay: stagger(0.1, node.props?.staggerOptions)
             }
             animation = animate(
-                childElements,
+                childrenElements,
                 node.props?.keyframes,
                 options
             )
@@ -64,8 +62,7 @@ const directive = (motionState: Ref<AnimationControlMap>): Directive<HTMLElement
         }
         
         if (key) {
-            motionState.value[key] = animation
-            triggerRef(motionState)
+            motionState[key] = animation
         }
 
         // Pass the motion instance via the local element
@@ -87,17 +84,10 @@ const directive = (motionState: Ref<AnimationControlMap>): Directive<HTMLElement
 
 export const MotionPlugin: Plugin = {
     install(app) {
-        const motionState = shallowRef<AnimationControlMap>({})
-        app.provide('motionState', motionState)
-        app.directive('motion', directive(motionState))
+        app.directive('animate', directive())
     }
 }
 
 export const useMotions = () => {
-    const motionState = inject<Ref<AnimationControlMap>>('motionState')
-    if (!motionState) {
-        throw new Error('Cannot find motionState')
-    }
-
     return motionState
 }

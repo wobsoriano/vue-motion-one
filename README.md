@@ -36,6 +36,10 @@ app.mount('#app')
 </template>
 ```
 
+### Stagger
+
+Applies an animation delay to a children of an element.
+
 ### Access motion instances
 
 To access a motion instance, add a value to the `v-motion` directive. It will then be accessible using `useMotions` composable.
@@ -63,5 +67,5 @@ const motions = useMotions()
 ```
 
 ### TODO
-- [x] Timeline
-- [ ] Stagger
+- [x] Stagger
+- [ ] Timeline

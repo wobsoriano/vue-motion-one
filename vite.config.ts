@@ -17,8 +17,8 @@ const prodConfig = defineConfig({
   build: {
     lib: {
       entry: resolvePath("lib/index.ts"),
-      name: 'v-motion',
-      fileName: (format) => `v-motion.${format}.js`,
+      name: 'vue-motion-one',
+      fileName: (format) => `vue-motion-one.${format}.js`,
     },
     rollupOptions: {
       external: ['vue', 'motion'],
