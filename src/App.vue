@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
 import { useMotions } from '../lib'
 
 const motions = useMotions()
