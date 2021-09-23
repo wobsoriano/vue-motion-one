@@ -68,7 +68,7 @@ Use the `stagger` arg to apply animation with delay to each of the element's chi
 | `keyframes` | Object | [Animate keyframes](https://motion.dev/dom/animate#keyframes) |
 | `options` | Object | [Animate options](https://motion.dev/dom/animate#options) |
 | `delayDuration` | Number | [Stagger delay duration](https://motion.dev/dom/stagger). For stagger only. |
-| `staggerOptions` | Number | [Stagger options](https://motion.dev/dom/stagger#options). For stagger only. |
+| `staggerOptions` | Object | [Stagger options](https://motion.dev/dom/stagger#options). For stagger only. |
 
 ### Access animate instances
 
