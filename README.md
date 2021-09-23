@@ -4,9 +4,13 @@ A Vue 3 plugin for adding [Motion One](https://motion.dev/) bindings to Vue comp
 
 ## Installation
 
+In your Vue app entry file:
+
 ```sh
 yarn add vue-motion-one motion
 ```
+
+You can now animate any component `v-animate`.
 
 ```ts
 import { createApp } from 'vue'
@@ -25,7 +29,7 @@ app.mount('#app')
 ```html
 <template>
   <div
-    vue-motion-one
+    v-animate
     :keyframes="{
       transform: 'rotate(45deg)'
     }"
