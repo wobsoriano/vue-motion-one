@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import MotionPlugin from './directive'
+import MotionPlugin from '../lib'
 
 const app = createApp(App)
 

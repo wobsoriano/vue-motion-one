@@ -1,4 +1,4 @@
-import { Plugin, Directive, VNode, DirectiveBinding, ref, Ref } from 'vue'
+import { Plugin, Directive, VNode, DirectiveBinding } from 'vue'
 import { animate, AnimationControls } from 'motion'
 
 const motionState: Record<string, AnimationControls> = {}

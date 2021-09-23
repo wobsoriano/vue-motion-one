@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { useMotions } from './directive'
+import { useMotions } from '../lib'
 
 const motions = useMotions()
 </script>
@@ -13,15 +13,29 @@ const motions = useMotions()
   :options="{
     duration: 0.5,
     easing: 'ease-in-out',
-    repeat: 5,
+    repeat: 100,
     direction: 'alternate'
   }"
   ></div>
+  <div id="controls">
+    <button @click="motions.motion.pause()">Pause</button>
+    <button @click="motions.motion.play()">Play</button>
+    <button @click="motions.motion.stop()">Stop</button>
+  </div>
 </template>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: black;
+  background-color: #0F1115;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #box {
@@ -29,5 +43,13 @@ body {
   height: 100px;
   border-radius: 10px;
   background-color: #00ffdb;
+}
+
+#controls {
+  margin-top: 30px;
+}
+
+#controls button {
+  margin-right: 10px;
 }
 </style>
