@@ -45,7 +45,7 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
     }
 }
 
-const MotionPlugin: Plugin = {
+export const MotionPlugin: Plugin = {
     install(app) {
         app.directive('motion', directive())
     }
@@ -54,5 +54,3 @@ const MotionPlugin: Plugin = {
 export const useMotions = () => {
     return motionState
 }
-
-export default MotionPlugin
