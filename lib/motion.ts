@@ -82,7 +82,7 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
     }
 }
 
-export const MotionPlugin: Plugin = {
+export const MotionOnePlugin: Plugin = {
     install(app) {
         app.directive('animate', directive())
     }

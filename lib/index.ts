@@ -1,4 +1,4 @@
 export {
-    MotionPlugin,
+    MotionOnePlugin,
     useMotions
 } from './motion'

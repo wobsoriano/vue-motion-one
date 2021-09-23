@@ -1,21 +1,21 @@
-# v-motion
+# vue-motion-one
 
 A Vue 3 plugin for adding [Motion One](https://motion.dev/) bindings to Vue components.
 
 ## Installation
 
 ```sh
-yarn add v-motion motion
+yarn add vue-motion-one motion
 ```
 
 ```ts
 import { createApp } from 'vue'
-import { MotionPlugin } from 'v-motion'
+import { MotionOnePlugin } from 'vue-motion-one'
 import App from './App.vue'
 
 const app = createApp(App)
 
-app.use(MotionPlugin)
+app.use(MotionOnePlugin)
 
 app.mount('#app')
 ```
@@ -25,7 +25,7 @@ app.mount('#app')
 ```html
 <template>
   <div
-    v-motion
+    vue-motion-one
     :keyframes="{
       transform: 'rotate(45deg)'
     }"
@@ -42,11 +42,11 @@ Applies an animation delay to a children of an element.
 
 ### Access motion instances
 
-To access a motion instance, add a value to the `v-motion` directive. It will then be accessible using `useMotions` composable.
+To access a motion instance, add a value to the `vue-motion-one` directive. It will then be accessible using `useMotions` composable.
 
 ```html
 <script setup>
-import { useMotions } from 'v-motion'
+import { useMotions } from 'vue-motion-one'
 
 const motions = useMotions()
 
@@ -55,7 +55,7 @@ const motions = useMotions()
 
 <template>
   <div
-    v-motion="box"
+    vue-motion-one="box"
     :keyframes="{
       transform: 'rotate(45deg)'
     }"
