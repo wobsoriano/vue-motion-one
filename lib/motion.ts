@@ -46,7 +46,7 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
             const childrenElements = node?.children?.map((i) => i.el)
             const options = {
                 ...node.props?.options,
-                delay: stagger(0.1, node.props?.staggerOptions)
+                delay: stagger(node.props?.delayDuration ?? 0.1, node.props?.staggerOptions)
             }
             animation = animate(
                 childrenElements,

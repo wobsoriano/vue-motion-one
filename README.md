@@ -4,13 +4,13 @@ A Vue 3 plugin for adding [Motion One](https://motion.dev/) bindings to Vue comp
 
 ## Installation
 
-In your Vue app entry file:
-
 ```sh
 yarn add vue-motion-one motion
 ```
 
-You can now animate any component `v-animate`.
+## Usage
+
+In your Vue app entry file:
 
 ```ts
 import { createApp } from 'vue'
@@ -24,7 +24,7 @@ app.use(MotionOnePlugin)
 app.mount('#app')
 ```
 
-## Usage
+You can now animate any component `v-animate`.
 
 ```html
 <template>
@@ -42,7 +42,25 @@ app.mount('#app')
 
 ### Stagger
 
-Applies an animation delay to a children of an element.
+Use the `stagger` arg to apply animation delay to each of the element's children.
+
+```html
+<template>
+  <ul
+    v-animate:stagger
+    :keyframes="{
+      opacity: 1
+    }"
+    :delayDuration="0.2"
+    :staggerOptions="{
+      easing: 'ease-out'
+    }"
+  >
+    <li v-for="n in 10" :key="n">{{ n }}</li>
+  </ul>
+</template>
+```
+
 
 ### Access motion instances
 
