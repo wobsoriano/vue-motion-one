@@ -61,7 +61,7 @@ Use the `stagger` arg to apply animation with delay to each of the element's chi
 </template>
 ```
 
-#### Props
+### Props
 
 | Key | Type | Description |
 | :----- | :-------- | :---------- |
