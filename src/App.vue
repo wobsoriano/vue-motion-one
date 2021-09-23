@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useMotions } from '../lib'
+import { useAnimations } from '../lib'
 
-const motions = useMotions()
+const animations = useAnimations()
 </script>
 
 <template>
@@ -17,9 +17,9 @@ const motions = useMotions()
   }"
   ></div>
   <div id="controls">
-    <button @click="motions.motion.pause()">Pause</button>
-    <button @click="motions.motion.play()">Play</button>
-    <button @click="motions.motion.stop()">Stop</button>
+    <button @click="animations.motion.pause()">Pause</button>
+    <button @click="animations.motion.play()">Play</button>
+    <button @click="animations.motion.stop()">Stop</button>
   </div>
 </template>
 

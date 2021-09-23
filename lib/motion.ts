@@ -88,6 +88,6 @@ export const MotionOnePlugin: Plugin = {
     }
 }
 
-export const useMotions = () => {
+export const useAnimations = () => {
     return motionState
 }

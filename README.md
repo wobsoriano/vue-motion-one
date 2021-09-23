@@ -24,7 +24,7 @@ app.use(MotionOnePlugin)
 app.mount('#app')
 ```
 
-You can now animate any component `v-animate`.
+You can now animate any component using `v-animate`.
 
 ```html
 <template>
@@ -64,20 +64,20 @@ Use the `stagger` arg to apply animation delay to each of the element's children
 
 ### Access motion instances
 
-To access a motion instance, add a value to the `vue-motion-one` directive. It will then be accessible using `useMotions` composable.
+To access a motion instance, add a value to the `v-animate` directive. It will then be accessible using `useAnimations` composable.
 
 ```html
 <script setup>
-import { useMotions } from 'vue-motion-one'
+import { useAnimations } from 'vue-motion-one'
 
-const motions = useMotions()
+const animations = useAnimations()
 
-// motions.box.stop()
+// animations.box.stop()
 </script>
 
 <template>
   <div
-    vue-motion-one="box"
+    v-animate="'box'"
     :keyframes="{
       transform: 'rotate(45deg)'
     }"
