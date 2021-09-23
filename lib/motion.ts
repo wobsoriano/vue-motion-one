@@ -21,6 +21,12 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
         // Cleanup previous animation if it exists
         if (key && motionState[key]) motionState[key].stop()
 
+        if (!node.props?.keyframes) {
+            console.error(
+                `Keyframes prop is required!`
+            )
+        }
+
         const animation = animate(
             el,
             node.props?.keyframes,
