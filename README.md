@@ -24,7 +24,7 @@ app.use(MotionOnePlugin)
 app.mount('#app')
 ```
 
-You can now animate any component using `v-animate`.
+You can now animate any component using `v-animate` directive.
 
 ```html
 <template>
@@ -40,9 +40,9 @@ You can now animate any component using `v-animate`.
 </template>
 ```
 
-### Stagger
+#### Stagger
 
-Use the `stagger` arg to apply animation delay to each of the element's children.
+Use the `stagger` arg to apply animation with delay to each of the element's children.
 
 ```html
 <template>
@@ -61,10 +61,18 @@ Use the `stagger` arg to apply animation delay to each of the element's children
 </template>
 ```
 
+#### Props
 
-### Access motion instances
+| Key | Type | Description |
+| :----- | :-------- | :---------- |
+| `keyframes` | Object | [More info](https://motion.dev/dom/animate#keyframes) |
+| `options` | Object | [More info](https://motion.dev/dom/animate#options) |
+| `delayDuration` | Number | [Stagger delay duration](https://motion.dev/dom/stagger). For stagger only. |
+| `staggerOptions` | Number | [Stagger options](https://motion.dev/dom/stagger#options). For stagger only. |
 
-To access a motion instance, add a value to the `v-animate` directive. It will then be accessible using `useAnimations` composable.
+### Access animate instances
+
+To access an animate instance, add a value to the `v-animate` directive. It will then be accessible using `useAnimations` composable.
 
 ```html
 <script setup>

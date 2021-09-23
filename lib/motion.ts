@@ -10,9 +10,7 @@ import {
     stagger
 } from 'motion'
 
-type AnimationControlMap = Record<string, AnimationControls>
-
-const motionState: AnimationControlMap = {}
+const motionState: {[key: string]: AnimationControls} = {}
 
 const directive = (): Directive<HTMLElement | SVGElement> => {
     const register = (
