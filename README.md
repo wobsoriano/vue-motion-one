@@ -36,6 +36,32 @@ app.mount('#app')
 </template>
 ```
 
+### Access motion instances
+
+To access a motion instance, add a value to the `v-motion` directive. It will then be accessible using `useMotions` composable.
+
+```html
+<script setup>
+import { useMotions } from 'v-motion'
+
+const motions = useMotions()
+
+// motions.box.stop()
+</script>
+
+<template>
+  <div
+    v-motion="box"
+    :keyframes="{
+      transform: 'rotate(45deg)'
+    }"
+    :options="{
+      duration: 0.5
+    }"
+  />
+</template>
+```
+
 ### TODO
 - [ ] Timeline
 - [ ] Stagger
