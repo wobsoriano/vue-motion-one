@@ -63,5 +63,5 @@ const motions = useMotions()
 ```
 
 ### TODO
-- [ ] Timeline
+- [x] Timeline
 - [ ] Stagger

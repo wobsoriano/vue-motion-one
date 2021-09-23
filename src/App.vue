@@ -6,7 +6,7 @@ const motions = useMotions()
 
 <template>
   <div
-  id="box"
+  class="box"
   v-motion="'motion'"
   :keyframes="{ rotate: 90 }"
   :options="{
@@ -30,14 +30,14 @@ const motions = useMotions()
 }
 
 body {
-  background-color: #0F1115;
+  /* background-color: #0F1115; */
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#box {
+.box {
   width: 100px;
   height: 100px;
   border-radius: 10px;

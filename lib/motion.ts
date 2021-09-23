@@ -1,9 +1,22 @@
-import { Plugin, Directive, VNode, DirectiveBinding } from 'vue'
-import { animate, AnimationControls } from 'motion'
+import {
+    Plugin,
+    Directive,
+    VNode,
+    DirectiveBinding,
+    Ref,
+    triggerRef,
+    shallowRef,
+    inject
+} from 'vue'
+import {
+    animate,
+    AnimationControls,
+    stagger
+} from 'motion'
 
-const motionState: Record<string, AnimationControls> = {}
+type AnimationControlMap = Record<string, AnimationControls>
 
-const directive = (): Directive<HTMLElement | SVGElement> => {
+const directive = (motionState: Ref<AnimationControlMap>): Directive<HTMLElement | SVGElement> => {
     const register = (
         el: HTMLElement | SVGElement, 
         binding: DirectiveBinding,
@@ -19,7 +32,7 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
         const key = binding.value || node.key
         
         // Cleanup previous animation if it exists
-        if (key && motionState[key]) motionState[key].stop()
+        if (key && motionState.value[key]) motionState.value[key].stop()
 
         if (!node.props?.keyframes) {
             console.error(
@@ -27,12 +40,33 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
             )
         }
 
-        const animation = animate(
-            el,
-            node.props?.keyframes,
-            node.props?.options
-        )
-        motionState[key] = animation
+        let animation: AnimationControls
+
+        // Check if arg stagger is present
+        if (binding.arg && binding.arg === 'stagger') {
+            // @ts-ignore
+            const childElements = node?.children?.map((i) => i.el)
+            const options = {
+                ...node.props?.options,
+                delay: stagger(0.1)
+            }
+            animation = animate(
+                childElements,
+                node.props?.keyframes,
+                options
+            )
+        } else {
+            animation = animate(
+                el,
+                node.props?.keyframes,
+                node.props?.options
+            )
+        }
+        
+        if (key) {
+            motionState.value[key] = animation
+            triggerRef(motionState)
+        }
 
         // Pass the motion instance via the local element
         // @ts-ignore
@@ -53,10 +87,17 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
 
 export const MotionPlugin: Plugin = {
     install(app) {
-        app.directive('motion', directive())
+        const motionState = shallowRef<AnimationControlMap>({})
+        app.provide('motionState', motionState)
+        app.directive('motion', directive(motionState))
     }
 }
 
 export const useMotions = () => {
+    const motionState = inject<Ref<AnimationControlMap>>('motionState')
+    if (!motionState) {
+        throw new Error('Cannot find motionState')
+    }
+
     return motionState
 }
