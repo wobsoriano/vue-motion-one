@@ -1,6 +1,6 @@
 # vue-motion-one
 
-A Vue 3 plugin for adding [Motion One](https://motion.dev/) bindings to Vue components.
+[Motion One](https://motion.dev/) as Vue 3 directive.
 
 ## Installation
 

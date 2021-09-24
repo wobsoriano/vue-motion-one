@@ -1,6 +1,6 @@
 {
   "name": "vue-motion-one",
-  "description": "A Vue 3 plugin for adding Motion One bindings to Vue components",
+  "description": "Motion One as Vue 3 directive.",
   "version": "0.0.1",
   "license": "MIT",
   "main": "./dist/vue-motion-one.umd.js",
