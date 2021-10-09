@@ -39,4 +39,4 @@ onMounted(() => {
 `useTimeline` accepts:
 
 -   `sequence` - Array of animations with the same settings as the animate function. In the arrays, the element can be either a ref or a string. You can refer to [sequence docs](https://motion.dev/dom/timeline#sequence) for more on this.
--   `options` - Optional parameter. Refer to [motion one's docs](https://motion.dev/dom/animate#options) for the values you could pass to this.
+-   `options` - Optional parameter. Refer to [motion one docs](https://motion.dev/dom/animate#options) for the values you could pass to this.
