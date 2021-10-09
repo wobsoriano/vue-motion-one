@@ -1,7 +1,7 @@
 {
   "name": "vue-motion-one",
-  "description": "Motion One as Vue 3 directive.",
-  "version": "0.0.2",
+  "description": "A Vue 3 wrapper for Motion One.",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "./dist/vue-motion-one.umd.js",
   "module": "./dist/vue-motion-one.es.js",
@@ -14,7 +14,8 @@
   },
   "keywords": [
     "vue",
-    "motion"
+    "motion",
+    "animation"
   ],
   "files": [
     "dist"

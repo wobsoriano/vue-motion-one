@@ -21,9 +21,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="box" ref="box" style="z-index: 1"></div>
+  <div class="box" ref="box"></div>
   <br />
-  <div class="box" ref="box2" style="z-index: 1"></div>
+  <div class="box" ref="box2"></div>
   <div id="controls">
     <button @click="play">Play</button>
     <button @click="replay">replay</button>
