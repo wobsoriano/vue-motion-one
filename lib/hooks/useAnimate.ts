@@ -14,21 +14,21 @@ import {
  * @param options - See https://motion.dev/dom/animate#options.
  */
 export const useAnimate = (
-    target: Ref<HTMLElement | SVGElement> | string,
+    target: Ref<HTMLElement | SVGElement | undefined> | string,
     keyframes: MotionKeyframesDefinition,
     options?: AnimationListOptions
 ) => {
     const animateInstance = ref<AnimationControls | null>(null)
     const isFinished = ref(false)
 
-    const play = async () => {
+    const play = () => {
         if (target) {
             let selectedType: AcceptedElements
 
             if (typeof target === 'string') {
                 selectedType = target
             } else {
-                selectedType = target.value
+                selectedType = target.value!
             }
 
             if (selectedType) {
@@ -39,7 +39,7 @@ export const useAnimate = (
                 )
                 isFinished.value = false
                 animateInstance.value = currentAnimateInstance
-                await currentAnimateInstance.finished.then(() => {
+                currentAnimateInstance.finished.then(() => {
                     isFinished.value = true
                 })
             }
@@ -47,12 +47,12 @@ export const useAnimate = (
     }
 
     const reset = () => {
-        animateInstance.value?.finish?.()
+        animateInstance.value?.stop?.()
 
         if (typeof target !== 'string' && target.value) {
             target.value.removeAttribute('style')
         } else if (typeof target === 'string') {
-            let selectedElements: NodeListOf<HTMLElement> =
+            const selectedElements: NodeListOf<HTMLElement> =
                 document.querySelectorAll(target)
 
             selectedElements.forEach((el) => {

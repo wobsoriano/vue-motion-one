@@ -1,7 +1,7 @@
 export {
     MotionOnePlugin,
     useAnimations
-} from './motion'
+} from './directive'
 
 export {
     animate,
@@ -9,6 +9,5 @@ export {
     timeline
 } from 'motion'
 
-export {
-    useAnimate
-} from './hooks/useAnimate'
+export { useAnimate } from './hooks/useAnimate'
+export { useTimeline } from './hooks/useTimeline'
