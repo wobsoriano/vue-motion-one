@@ -1,25 +1,21 @@
 <script setup lang="ts">
-import { useAnimations } from '../lib'
+import { useAnimations, useAnimate } from '../lib'
 
 const animations = useAnimations()
+const {
+  play,
+  replay
+} = useAnimate(
+  '.box',
+  { rotate: 180 },
+)
 </script>
 
 <template>
-  <div
-  class="box"
-  v-animate="'motion'"
-  :keyframes="{ rotate: 90 }"
-  :options="{
-    duration: 0.5,
-    easing: 'ease-in-out',
-    repeat: 100,
-    direction: 'alternate'
-  }"
-  ></div>
+  <div class="box" style="z-index: 1"></div>
   <div id="controls">
-    <button @click="animations.motion.pause()">Pause</button>
-    <button @click="animations.motion.play()">Play</button>
-    <button @click="animations.motion.stop()">Stop</button>
+    <button @click="play">Play</button>
+    <button @click="replay">replay</button>
   </div>
 </template>
 

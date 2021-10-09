@@ -7,3 +7,6 @@ export {
     stagger,
     timeline
 } from 'motion'
+export {
+    useAnimate
+} from './hooks/useAnimate'
