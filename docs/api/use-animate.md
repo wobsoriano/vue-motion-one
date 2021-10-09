@@ -36,5 +36,5 @@ onMounted(() => {
 `useAnimate` accepts:
 
 -   `target` - The target element. Can be a ref or string.
--   `keyframes` - Element will animate from its current style to those defined in the keyframe. Refer to [motion one's docs](https://motion.dev/dom/animate#keyframes) for more.
+-   `keyframes` - Element will animate from its current style to those defined in the keyframe. Refer to [motion one docs](https://motion.dev/dom/animate#keyframes) for more.
 -   `options` - Optional parameter. Refer to [motion one docs](https://motion.dev/dom/animate#options) for the values you could pass to this.
