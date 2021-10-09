@@ -6,8 +6,7 @@ import {
 } from 'vue'
 import {
     animate,
-    AnimationControls,
-    stagger
+    AnimationControls
 } from 'motion'
 
 const motionState: {[key: string]: AnimationControls} = {}
@@ -38,26 +37,11 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
 
         let animation: AnimationControls
 
-        // Check if arg stagger is present
-        if (binding.arg && binding.arg === 'stagger') {
-            // @ts-ignore
-            const childrenElements = node?.children?.map((i) => i.el)
-            const options = {
-                ...node.props?.options,
-                delay: stagger(node.props?.delayDuration ?? 0.1, node.props?.staggerOptions)
-            }
-            animation = animate(
-                childrenElements,
-                node.props?.keyframes,
-                options
-            )
-        } else {
-            animation = animate(
-                el,
-                node.props?.keyframes,
-                node.props?.options
-            )
-        }
+        animation = animate(
+            el,
+            node.props?.keyframes,
+            node.props?.options
+        )
         
         if (key) {
             motionState[key] = animation
