@@ -50,9 +50,7 @@ export const useAnimate = (
         animateInstance.value?.finish?.()
 
         if (typeof target !== 'string' && target.value) {
-            Object.keys(target.value).forEach((key) => {
-                target.value.style.removeProperty(key)
-            })
+            target.value.removeAttribute('style')
         } else if (typeof target === 'string') {
             let selectedElements: NodeListOf<HTMLElement> =
                 document.querySelectorAll(target)
