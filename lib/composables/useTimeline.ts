@@ -45,15 +45,16 @@ export const useTimeline = (
 
     const modifiedSequence = computed(() => convertRefsToElement(sequence))
 
-    const play = async () => {
+    const play = () => {
         const currentTimelineInstance = timeline(
             modifiedSequence.value,
             options
         )
         isFinished.value = false
         timelineInstance.value = currentTimelineInstance
-        await currentTimelineInstance.finished
-        isFinished.value = true
+        currentTimelineInstance.finished.then(() => {
+            isFinished.value = true
+        })
     }
 
     const reset = () => {

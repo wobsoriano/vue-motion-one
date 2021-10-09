@@ -9,5 +9,5 @@ export {
     timeline
 } from 'motion'
 
-export { useAnimate } from './hooks/useAnimate'
-export { useTimeline } from './hooks/useTimeline'
+export { useAnimate } from './composables/useAnimate'
+export { useTimeline } from './composables/useTimeline'
