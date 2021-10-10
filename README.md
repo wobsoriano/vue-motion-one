@@ -8,5 +8,5 @@ Visit https://vue-motion-one.vercel.app
 
 ## Acknowledgments
 
-- https://motion.dev/
+- [motion.dev](https://motion.dev/)
 - [motion-hooks](https://github.com/tanvesh01/motion-hooks)
