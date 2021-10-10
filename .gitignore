@@ -4,3 +4,4 @@ dist
 dist-demo
 dist-ssr
 *.local
+.vscode
