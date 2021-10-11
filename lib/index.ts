@@ -6,7 +6,8 @@ export {
 export {
     animate,
     stagger,
-    timeline
+    timeline,
+    spring
 } from 'motion'
 
 export { useAnimate } from './composables/useAnimate'
