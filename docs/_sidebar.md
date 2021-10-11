@@ -14,3 +14,4 @@
   - [Animating list](examples/animating-list.md)
   - [Animating elements independently](examples/animating-elements-independently.md)
   - [SVG loading spinner](examples/svg-loading-spinner.md)
+  - [SVG path drawing](examples/svg-path-drawing.md)
