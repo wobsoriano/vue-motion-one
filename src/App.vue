@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useAnimations, useAnimate, useTimeline } from '../lib'
-
-const animations = useAnimations()
+import { useTimeline } from '../lib'
+import Box from './Box.vue'
 
 const box = ref<HTMLElement>()
 const box2 = ref<HTMLElement>()
@@ -23,7 +22,7 @@ onMounted(() => {
 <template>
   <div class="box" ref="box"></div>
   <br />
-  <div class="box" ref="box2"></div>
+  <Box ref="box2" />
   <div id="controls">
     <button @click="play">Play</button>
     <button @click="replay">replay</button>
