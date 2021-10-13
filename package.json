@@ -1,7 +1,7 @@
 {
   "name": "vue-motion-one",
   "description": "A Vue 3 wrapper for Motion One.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "main": "./dist/vue-motion-one.umd.js",
   "module": "./dist/vue-motion-one.es.js",
