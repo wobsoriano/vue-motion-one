@@ -1,6 +1,6 @@
 # vue-motion-one
 
-A Vue 3 wrapper for [Motion One](https://motion.dev/).
+Animation library for Vue 3 based on [Motion One](https://motion.dev/).
 
 ## Documentation
 
