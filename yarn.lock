@@ -609,10 +609,10 @@ mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-motion@^10.2.1:
-  version "10.2.1"
-  resolved "https://registry.yarnpkg.com/motion/-/motion-10.2.1.tgz#18b4685286363aa5430600efa4d949316f1c3ef8"
-  integrity sha512-6Yzm3FeTbSdH7VjrKFLMdSvl7EQU7daFPjFjlTrumcyT/+1kGfVJxrDugRwMY1WRpg/V0Ck+3JYg25qOBS6QMA==
+motion@^10.3.1:
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/motion/-/motion-10.3.1.tgz#8b0e2b887ade01337390e2e0a381976a006aad6f"
+  integrity sha512-0a2MZFIwYxbL2jpwPOFMAT0zK7gaAOguT3heCGr+b98wKzvrg4H7HL3t2Cd9GxALU35MBgqpoB+gQ138M7+thw==
   dependencies:
     framer-motion "^4.1.17"
     tslib "^2.3.0"

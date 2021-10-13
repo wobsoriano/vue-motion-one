@@ -28,7 +28,7 @@
   "devDependencies": {
     "@types/node": "^16.9.6",
     "@vitejs/plugin-vue": "^1.9.0",
-    "motion": "^10.2.1",
+    "motion": "^10.3.1",
     "typescript": "^4.4.3",
     "vite": "^2.5.10",
     "vite-plugin-dts": "^0.8.1",
