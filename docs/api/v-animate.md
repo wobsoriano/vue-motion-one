@@ -66,3 +66,15 @@ const someMethod = () => {
   />
 </template>
 ```
+
+### Nuxt 3
+
+To use the `v-animate` directive in Nuxt 3, create a file in your `nuxt.config.ts` and add this:
+
+```ts
+import { MotionOnePlugin } from 'vue-motion-one'
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.app.use(MotionOnePlugin)
+})
+```
