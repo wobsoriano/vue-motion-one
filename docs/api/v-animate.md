@@ -76,6 +76,6 @@ To use the `v-animate` directive in Nuxt 3, create a file in your plugins folder
 import { MotionOnePlugin } from 'vue-motion-one'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.app.use(MotionOnePlugin)
+  nuxtApp.vueApp.use(MotionOnePlugin)
 })
 ```
