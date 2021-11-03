@@ -1,7 +1,7 @@
 {
   "name": "vue-motion-one",
   "description": "Animation library for Vue 3 based on Motion One.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MIT",
   "main": "./dist/vue-motion-one.umd.js",
   "module": "./dist/vue-motion-one.es.js",
