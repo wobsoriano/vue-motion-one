@@ -1,6 +1,7 @@
 # vue-motion-one
 
 Animation library for Vue 3 based on [Motion One](https://motion.dev/).
+For component based animations, please check the official [Motion One library for Vue 3](https://motion.dev/vue/quick-start).
 
 ## Documentation
 
