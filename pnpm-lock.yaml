@@ -6,7 +6,6 @@ specifiers:
   '@motionone/dom': ^10.6.2
   bumpp: ^7.1.1
   eslint: ^8.10.0
-  husky: ^7.0.4
   lint-staged: ^12.3.5
   motion: 10.6.2
   simple-git-hooks: ^2.7.0
@@ -24,7 +23,6 @@ devDependencies:
   '@motionone/dom': 10.6.2
   bumpp: 7.1.1
   eslint: 8.10.0
-  husky: 7.0.4
   lint-staged: 12.3.5
   simple-git-hooks: 2.7.0
   tsup: 5.11.13_typescript@4.6.2
@@ -1778,12 +1776,6 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
-    dev: true
-
-  /husky/7.0.4:
-    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
-    engines: {node: '>=12'}
-    hasBin: true
     dev: true
 
   /ignore/4.0.6:
