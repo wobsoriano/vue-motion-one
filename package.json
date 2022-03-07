@@ -32,6 +32,8 @@
     "bumpp": "^7.1.1",
     "eslint": "^8.10.0",
     "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
+    "simple-git-hooks": "^2.7.0",
     "tsup": "^5.11.13",
     "typescript": "^4.4.3"
   },
@@ -54,5 +56,13 @@
   },
   "eslintIgnore": [
     "dist"
-  ]
+  ],
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "{src,docs}/**/*.{js,ts,vue,md}": [
+      "eslint \"**/*.{ts,js}\""
+    ]
+  }
 }
