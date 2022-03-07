@@ -13,7 +13,8 @@
   "scripts": {
     "build": "tsup",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "lint": "eslint --fix"
   },
   "keywords": [
     "vue",
@@ -58,7 +59,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,ts,vue,md,html}": [
+    "*.{js,ts,vue,md,html}": [
       "eslint --fix"
     ]
   }
