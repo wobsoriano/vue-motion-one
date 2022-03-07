@@ -13,9 +13,7 @@
   "scripts": {
     "build": "tsup",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "prepublishOnly": "pnpm run build",
-    "lint": "eslint \"**/*.{ts,js}\"",
-    "prepare": "husky install"
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "vue",
