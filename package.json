@@ -61,7 +61,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "{src,docs}/**/*.{js,ts,vue,md,html}": [
+    "src/**/*.{js,ts,vue,md,html}": [
       "eslint --fix"
     ]
   }
