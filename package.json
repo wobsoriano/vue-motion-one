@@ -13,8 +13,7 @@
   "scripts": {
     "build": "tsup",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "prepublishOnly": "pnpm run build",
-    "lint": "eslint --fix"
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "vue",
