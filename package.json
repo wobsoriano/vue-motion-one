@@ -35,8 +35,8 @@
     "typescript": "^4.4.3"
   },
   "peerDependencies": {
-    "motion": ">=10.6.0",
-    "vue": ">=3.2.0"
+    "motion": "^10.6.0",
+    "vue": "^3.2.0"
   },
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
   "homepage": "https://github.com/wobsoriano/vue-motion-one#readme",
   "sideEffects": false,
   "dependencies": {
-    "motion": "10.6.2",
+    "motion": "^10.6.2",
     "vue": "^3.2.31"
   },
   "eslintConfig": {
