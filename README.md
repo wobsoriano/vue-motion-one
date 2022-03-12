@@ -11,3 +11,7 @@ Visit https://vue-motion-one.vercel.app
 
 - [motion.dev](https://motion.dev/)
 - [motion-hooks](https://github.com/tanvesh01/motion-hooks)
+
+## License
+
+MIT
