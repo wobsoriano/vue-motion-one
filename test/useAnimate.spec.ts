@@ -28,7 +28,9 @@ describe('useAnimate', () => {
 
   it('animates an element', async() => {
     const element = getElementRef()
+
     const { play, isFinished } = useAnimate(element, { transform: 'rotate(45deg)' })
+
     expect(isFinished.value).toBe(false)
     play()
     await nextTick()
