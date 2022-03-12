@@ -28,7 +28,9 @@
     "release": "bumpp --commit --push --tag && pnpm publish",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
     "motion": "^10.6.0",
@@ -53,7 +55,7 @@
     "vitest": "^0.6.0"
   },
   "lint-staged": {
-    "{src,docs}/**/*.{js,ts,vue,md,html}": [
+    "{src,docs,test}/**/*.{js,ts,vue,md,html}": [
       "eslint --fix"
     ]
   },
@@ -62,7 +64,8 @@
     "extends": "@antfu"
   },
   "eslintIgnore": [
-    "dist"
+    "dist",
+    "node_modules"
   ],
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
