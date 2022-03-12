@@ -1,28 +1,45 @@
 {
   "name": "vue-motion-one",
-  "description": "Animation library for Vue 3 based on Motion One.",
   "version": "0.2.2",
+  "description": "Animation library for Vue 3 based on Motion One.",
+  "keywords": [
+    "vue",
+    "motion",
+    "animation"
+  ],
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/vue-motion-one.git"
+  },
+  "files": [
+    "dist"
+  ],
   "exports": {
     "require": "./dist/index.js",
     "import": "./dist/index.mjs"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
-  "keywords": [
-    "vue",
-    "motion",
-    "animation"
-  ],
-  "files": [
-    "dist"
-  ],
+  "lint-staged": {
+    "{src,docs}/**/*.{js,ts,vue,md,html}": [
+      "eslint --fix"
+    ]
+  },
+  "peerDependencies": {
+    "motion": "^10.6.0",
+    "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "motion": "^10.6.2",
+    "vue": "^3.2.31"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.16.1",
     "@motionone/animation": "^10.6.2",
@@ -34,20 +51,8 @@
     "tsup": "^5.11.13",
     "typescript": "^4.4.3"
   },
-  "peerDependencies": {
-    "motion": "^10.6.0",
-    "vue": "^3.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wobsoriano/vue-motion-one.git"
-  },
   "homepage": "https://github.com/wobsoriano/vue-motion-one#readme",
   "sideEffects": false,
-  "dependencies": {
-    "motion": "^10.6.2",
-    "vue": "^3.2.31"
-  },
   "eslintConfig": {
     "extends": "@antfu"
   },
@@ -56,10 +61,5 @@
   ],
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "{src,docs}/**/*.{js,ts,vue,md,html}": [
-      "eslint --fix"
-    ]
   }
 }
