@@ -1,14 +1,14 @@
 import { mount } from '@vue/test-utils'
-import { nextTick, ref } from 'vue'
+import { defineComponent, nextTick, ref } from 'vue'
 import { describe, expect, it } from 'vitest'
 import { useAnimate } from '../src'
 
-const TestComponent = {
-  template: '<div>Hello world</div>',
-}
+const App = defineComponent({
+  template: '<div class="box">Box</div>',
+})
 
 const getElementRef = () => {
-  const c = mount(TestComponent)
+  const c = mount(App)
 
   return ref<HTMLElement>(c.element as HTMLElement)
 }

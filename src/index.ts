@@ -1,5 +1,6 @@
 export {
   MotionOnePlugin,
+  AnimateDirective,
   useAnimations,
 } from './directive'
 

@@ -47,7 +47,7 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "bumpp": "^7.1.1",
     "eslint": "^8.11.0",
-    "jsdom": "^19.0.0",
+    "happy-dom": "^2.46.3",
     "lint-staged": "^12.3.5",
     "simple-git-hooks": "^2.7.0",
     "tsup": "^5.11.13",

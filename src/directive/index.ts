@@ -13,7 +13,7 @@ import {
 
 const motionState: Record<string, AnimationControls> = {}
 
-const directive = (): Directive<HTMLElement | SVGElement> => {
+export const AnimateDirective = (): Directive<HTMLElement | SVGElement> => {
   const register = (
     el: HTMLElement | SVGElement,
     binding: DirectiveBinding,
@@ -63,7 +63,7 @@ const directive = (): Directive<HTMLElement | SVGElement> => {
 
 export const MotionOnePlugin: Plugin = {
   install(app) {
-    app.directive('animate', directive())
+    app.directive('animate', AnimateDirective())
   },
 }
 
