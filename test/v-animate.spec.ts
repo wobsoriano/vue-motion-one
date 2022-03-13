@@ -10,27 +10,20 @@ const App = defineComponent({
   `,
 })
 
+const wrapper = mount(App, {
+  global: {
+    directives: {
+      animate: AnimateDirective(),
+    },
+  },
+})
+
 describe('v-animate', () => {
   it('should be defined', () => {
-    const wrapper = mount(App, {
-      global: {
-        directives: {
-          animate: AnimateDirective(),
-        },
-      },
-    })
-
     expect(wrapper).toBeDefined()
   })
 
   it('animates an element', async() => {
-    const wrapper = mount(App, {
-      global: {
-        directives: {
-          animate: AnimateDirective(),
-        },
-      },
-    })
     expect((wrapper.vm.$refs.box as HTMLElement).style.transform).toBe('rotate(45deg)')
   })
 })
