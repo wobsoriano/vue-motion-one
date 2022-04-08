@@ -1,6 +1,6 @@
 {
   "name": "vue-motion-one",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Animation library for Vue 3 based on Motion One.",
   "keywords": [
     "vue",
