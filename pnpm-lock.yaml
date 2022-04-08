@@ -2,14 +2,14 @@ lockfileVersion: 5.3
 
 specifiers:
   '@antfu/eslint-config': ^0.18.8
-  '@motionone/animation': ^10.6.2
-  '@motionone/dom': ^10.6.2
+  '@motionone/animation': ^10.7.0
+  '@motionone/dom': ^10.7.0
   '@vue/test-utils': ^2.0.0-rc.17
   bumpp: ^7.1.1
   eslint: ^8.11.0
   happy-dom: ^2.46.3
   lint-staged: ^12.3.5
-  motion: ^10.6.2
+  motion: ^10.7.0
   simple-git-hooks: ^2.7.0
   tsup: ^5.11.13
   typescript: ^4.4.3
@@ -17,13 +17,13 @@ specifiers:
   vue: ^3.2.31
 
 dependencies:
-  motion: 10.6.2
+  motion: 10.7.0
   vue: 3.2.31
 
 devDependencies:
   '@antfu/eslint-config': 0.18.8_eslint@8.11.0+typescript@4.6.2
-  '@motionone/animation': 10.6.2
-  '@motionone/dom': 10.6.2
+  '@motionone/animation': 10.7.0
+  '@motionone/dom': 10.7.0
   '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
   bumpp: 7.1.1
   eslint: 8.11.0
@@ -195,40 +195,39 @@ packages:
       type-detect: 4.0.8
     dev: true
 
-  /@motionone/animation/10.6.2:
-    resolution: {integrity: sha512-LOq9SYwNSEg1aSM16a1HlQPIxEC+XTIq3+DwjXKH+ORHCmhULSmdWhjOr+7Yn1Up4fejbJgdW04nGnPuMsnjYA==}
+  /@motionone/animation/10.7.0:
+    resolution: {integrity: sha512-TMsa4i5J6Lhl0CzEJM0umzW/ChTY5tIQ0Xcwi/nqw4OAOnpCoKWb4SDqT8Afx7WZ9+rw1/lZyRbB7ND52ibFPg==}
     dependencies:
-      '@motionone/easing': 10.6.2
-      '@motionone/types': 10.6.2
-      '@motionone/utils': 10.6.2
+      '@motionone/easing': 10.7.0
+      '@motionone/types': 10.7.0
+      '@motionone/utils': 10.7.0
       tslib: 2.3.1
 
-  /@motionone/dom/10.6.2:
-    resolution: {integrity: sha512-AjYDuHIY9LfN7BARJ9bHZOjACh0Vkqc8Mhohud4VBDg6vAx/FnS1dh8WhMW9kS15Kd6DU1wKl5Qt65md2hAU8g==}
+  /@motionone/dom/10.7.0:
+    resolution: {integrity: sha512-aPXbpFJJtqeJWXolFDG77YZ+FTnQqQzdkaNvzPAi3H3sWeSGttRJWYprKo1EWcYCDKDGmvptftBC2Xt8EvK2bQ==}
     dependencies:
-      '@motionone/animation': 10.6.2
-      '@motionone/easing': 10.6.2
-      '@motionone/generators': 10.6.2
-      '@motionone/types': 10.6.2
-      '@motionone/utils': 10.6.2
+      '@motionone/animation': 10.7.0
+      '@motionone/generators': 10.7.0
+      '@motionone/types': 10.7.0
+      '@motionone/utils': 10.7.0
       hey-listen: 1.0.8
       tslib: 2.3.1
 
-  /@motionone/easing/10.6.2:
-    resolution: {integrity: sha512-zzagQP2pu7lNcKOX1HQA+w4mb47ETsyxqXOQf7572QnlGc6pQTCuUZmRIhwKjqn5VMA1kuS6XIY66KGF1284Ow==}
+  /@motionone/easing/10.7.0:
+    resolution: {integrity: sha512-FqGcVUel8NnYuXygnJ2KfiIfiySmpXhbTH/0icbRwjqPVVBd5k8+PCCrxJtFYD3LFKBUk2tT3fd01Y/j78+OUw==}
     dependencies:
-      '@motionone/utils': 10.6.2
+      '@motionone/utils': 10.7.0
       tslib: 2.3.1
 
-  /@motionone/generators/10.6.2:
-    resolution: {integrity: sha512-PofvpII7izwoxpJbwEpKBttRw943AogMBsGEXfxbD7WM7qCDbL0hBpiuxVgGqi9PtRG/AhNqD1M0HcTz8TePlQ==}
+  /@motionone/generators/10.7.0:
+    resolution: {integrity: sha512-l+F5bcszVN3YzMYEKyNE2TKilCe7l4B0BgSyjAvHCs37rXeUoJFv0B+UHAE1NL6iHzQ9s8Z5MUAGqyW/D0ymHQ==}
     dependencies:
-      '@motionone/types': 10.6.2
-      '@motionone/utils': 10.6.2
+      '@motionone/types': 10.7.0
+      '@motionone/utils': 10.7.0
       tslib: 2.3.1
 
-  /@motionone/react/10.6.2:
-    resolution: {integrity: sha512-LsCoyvsZhK8+gpxmOs1RESApB+M0t3KSraRE0HiHAO0AMBI3NNeSXWBF3Hz2OyRSMa75cL7evnWsofrN3ilDBA==}
+  /@motionone/react/10.7.0:
+    resolution: {integrity: sha512-9R/eqJQxtXZa92PsG/KOGLerJ+LDXCYRH4CigF23G8J5utMXaFthAP1XBnrRClMvA1rupGlnUhTCVFcEvuqntw==}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -238,32 +237,32 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@motionone/dom': 10.6.2
+      '@motionone/dom': 10.7.0
       hey-listen: 1.0.8
       tslib: 2.3.1
     dev: false
 
-  /@motionone/svelte/10.6.2:
-    resolution: {integrity: sha512-WFnjXHf43P4w8dEFrd8m0wxs3kRr/dZCVLXDbC+eejaRxJCEyeaJDNzGkWyGxDMXST897rQNoDy5p5WDsszW2A==}
+  /@motionone/svelte/10.7.0:
+    resolution: {integrity: sha512-P8CD03GF0Ce8Xo/MjsmoIoiFHOi7NTUfDYb16s3tIYgzEgT0yxrRdaBh/e5tElMgIZsG5BlSfxCvxo4z3tNJMA==}
     dependencies:
-      '@motionone/dom': 10.6.2
+      '@motionone/dom': 10.7.0
       tslib: 2.3.1
     dev: false
 
-  /@motionone/types/10.6.2:
-    resolution: {integrity: sha512-7YH5OGOhFN2fhxAc2L4i5LFQ/GqliiDt8DvN6htGXEMAleq1o0CVHlHdXyLG9l9eBM1NHlU75BjK3eLouSSFzA==}
+  /@motionone/types/10.7.0:
+    resolution: {integrity: sha512-Sb29czMqFj0GckrbfWlrp9/DjaO+mOdORFGqQ7jNCV4pqx/jKHZsRTX7cZrjLPAQJrfEQu02dMcMHZOhsCiBBA==}
 
-  /@motionone/utils/10.6.2:
-    resolution: {integrity: sha512-zy0pLX7aaDfKoO8nKZbjFGjjZpXNmWo3ae9S/WzoQ2U7a7/ePLa9gSzFDefm2553FtLTaaYecnSf1FH2BTVaww==}
+  /@motionone/utils/10.7.0:
+    resolution: {integrity: sha512-p8hAaIYE1JmaeduHhunjLUPFFWk+7MskCLcFTuJGTLVKWkWC6lLjswVV/Himkg2IHOqnbSRgqHb8y3jpIoPuMQ==}
     dependencies:
-      '@motionone/types': 10.6.2
+      '@motionone/types': 10.7.0
       hey-listen: 1.0.8
       tslib: 2.3.1
 
-  /@motionone/vue/10.6.2:
-    resolution: {integrity: sha512-pwhV9n4WV/w86Rqzou88pfWIv6Andgib3HJP+/LcWdjNcc2rFyJ9g9wpT9MDS7QO3ouXl6xXljTD5FBXN60/3g==}
+  /@motionone/vue/10.7.0:
+    resolution: {integrity: sha512-28Ip/hR8GLBieNiZ4IcmSrBHEPY6UiSp4+iidpOlG5GTLLWXxl7Pzqhbe6i9BTNpEY9yc2AdplQ6LEe/yxaPqQ==}
     dependencies:
-      '@motionone/dom': 10.6.2
+      '@motionone/dom': 10.7.0
       tslib: 2.3.1
     dev: false
 
@@ -2461,14 +2460,14 @@ packages:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: true
 
-  /motion/10.6.2:
-    resolution: {integrity: sha512-xvmWg7GlcNZwcddenQ25uqmlIsSWwFKS1C7EDpwQB1hjeJf2zFsdzM0CPSzZ+eC0qh3RXgRv7R6r4AthZiv4Qg==}
+  /motion/10.7.0:
+    resolution: {integrity: sha512-O6eMDzspPnTcU3IfmwZl8uY5t6DndbJEEnWBw+OqZSCLeSaDs4+gB0JnvqFkyrGl8vpE9H3UrRD5RDy1Z3TZmw==}
     dependencies:
-      '@motionone/animation': 10.6.2
-      '@motionone/dom': 10.6.2
-      '@motionone/react': 10.6.2
-      '@motionone/svelte': 10.6.2
-      '@motionone/vue': 10.6.2
+      '@motionone/animation': 10.7.0
+      '@motionone/dom': 10.7.0
+      '@motionone/react': 10.7.0
+      '@motionone/svelte': 10.7.0
+      '@motionone/vue': 10.7.0
     transitivePeerDependencies:
       - react
       - react-dom

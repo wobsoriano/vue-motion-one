@@ -37,13 +37,13 @@
     "vue": "^3.2.0"
   },
   "dependencies": {
-    "motion": "^10.6.2",
+    "motion": "^10.7.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
-    "@motionone/animation": "^10.6.2",
-    "@motionone/dom": "^10.6.2",
+    "@motionone/animation": "^10.7.0",
+    "@motionone/dom": "^10.7.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "bumpp": "^7.1.1",
     "eslint": "^8.11.0",
