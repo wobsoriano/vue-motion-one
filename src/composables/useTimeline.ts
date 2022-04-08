@@ -62,8 +62,12 @@ export const useTimeline = (
     })
   }
 
-  const reset = () => {
+  const stop = () => {
     timelineInstance.value?.stop?.()
+  }
+
+  const reset = () => {
+    stop()
 
     sequence.forEach((el) => {
       const selector = el[0]
@@ -91,6 +95,7 @@ export const useTimeline = (
     play,
     reset,
     replay,
+    stop,
     isFinished,
   }
 }

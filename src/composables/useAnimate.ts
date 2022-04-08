@@ -51,8 +51,12 @@ export const useAnimate = (
     }
   }
 
-  const reset = () => {
+  const stop = () => {
     animateInstance.value?.stop?.()
+  }
+
+  const reset = () => {
+    stop()
 
     if (typeof target !== 'string' && target.value) {
       target.value.removeAttribute('style')
@@ -77,6 +81,7 @@ export const useAnimate = (
     play,
     reset,
     replay,
+    stop,
     isFinished,
   }
 }
