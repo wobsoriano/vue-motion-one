@@ -34,6 +34,7 @@ onMounted(() => {
 -   `replay`: Resets and plays the animation
 -   `reset`: resets the element to its original styling
 -   `stop`: stops the animation
+-   `pause`: pauses the animation
 -   `isFinished`: is `true` when animation has finished playing
 -   `timelineInstance`: Animation Controls. Refer to [motion one docs](https://motion.dev/dom/controls) for more.
 
