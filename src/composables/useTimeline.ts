@@ -62,6 +62,10 @@ export const useTimeline = (
     })
   }
 
+  const pause = () => {
+    timelineInstance.value?.pause?.()
+  }
+
   const stop = () => {
     timelineInstance.value?.stop?.()
   }
@@ -96,6 +100,7 @@ export const useTimeline = (
     reset,
     replay,
     stop,
+    pause,
     isFinished,
   }
 }

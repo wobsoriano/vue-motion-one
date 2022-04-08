@@ -51,6 +51,10 @@ export const useAnimate = (
     }
   }
 
+  const pause = () => {
+    animateInstance.value?.pause?.()
+  }
+
   const stop = () => {
     animateInstance.value?.stop?.()
   }
@@ -82,6 +86,7 @@ export const useAnimate = (
     reset,
     replay,
     stop,
+    pause,
     isFinished,
   }
 }
