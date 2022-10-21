@@ -25,7 +25,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsup",
-    "release": "bumpp --commit --push --tag && pnpm publish",
+    "release": "bumpp --commit --push --tag && npm publish",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "prepublishOnly": "pnpm run build",
