@@ -2,11 +2,10 @@ import type { Ref } from 'vue'
 import { computed, isRef, ref } from 'vue'
 import type {
   AnimationControls,
-
 } from '@motionone/types'
 import type {
-  AcceptedElements,
   AnimationListOptions,
+  ElementOrSelector,
   MotionKeyframesDefinition,
 } from '@motionone/dom'
 import {
@@ -15,7 +14,7 @@ import {
 import type { TimelineOptions } from '@motionone/dom/types/timeline'
 import type { TimelineDefinition } from '@motionone/dom/types/timeline/types'
 
-type ModifiedAcceptedElements = AcceptedElements | Ref<HTMLElement | SVGElement | undefined>
+type ModifiedAcceptedElements = ElementOrSelector | Ref<HTMLElement | SVGElement | undefined>
 
 type Segment =
     | [ModifiedAcceptedElements, MotionKeyframesDefinition]

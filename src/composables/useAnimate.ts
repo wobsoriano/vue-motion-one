@@ -4,8 +4,8 @@ import type {
   AnimationControls,
 } from '@motionone/types'
 import type {
-  AcceptedElements,
   AnimationOptionsWithOverrides,
+  ElementOrSelector,
   MotionKeyframesDefinition,
 } from '@motionone/dom'
 import {
@@ -28,7 +28,7 @@ export const useAnimate = (
 
   const play = () => {
     if (target) {
-      let selectedType: AcceptedElements
+      let selectedType: ElementOrSelector
 
       if (typeof target === 'string')
         selectedType = target
