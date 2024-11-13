@@ -1,4 +1,4 @@
 export {
   MotionPlugin,
-  vAnimate,
+  useAnimations,
 } from './directive'

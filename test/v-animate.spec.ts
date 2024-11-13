@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import { defineComponent } from 'vue'
 import { describe, expect, it } from 'vitest'
+import { defineComponent } from 'vue'
 import { vAnimate } from '../src'
 
 const App = defineComponent({
@@ -23,7 +23,7 @@ describe('v-animate', () => {
     expect(wrapper).toBeDefined()
   })
 
-  it('animates an element', async() => {
+  it('animates an element', async () => {
     expect((wrapper.vm.$refs.box as HTMLElement).style.transform).toBe('rotate(45deg)')
   })
 })
