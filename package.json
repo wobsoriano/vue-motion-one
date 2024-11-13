@@ -1,8 +1,8 @@
 {
-  "name": "vue-motion-one",
+  "name": "@jsrob/vue-motion",
   "type": "module",
-  "version": "0.3.0",
-  "description": "Animation library for Vue 3 based on Motion One.",
+  "version": "0.0.0",
+  "description": "Vue directive for Motion",
   "license": "MIT",
   "homepage": "https://github.com/wobsoriano/vue-motion-one#readme",
   "repository": {

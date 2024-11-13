@@ -1,6 +1,6 @@
 # vue-motion
 
-Vue 3 directive for [Motion](https://motion.dev/).
+Vue directive for [Motion](https://motion.dev/).
 
 ## Installation
 
