@@ -13,7 +13,8 @@ import {
   animate,
 } from 'motion'
 
-type AnimationPlaybackControls = ReturnType<typeof animate>
+// TODO: Import this later in motion
+type AnimationPlaybackControls = any
 
 interface MotionElement extends HTMLElement {
   __internal_motion_instance?: AnimationPlaybackControls

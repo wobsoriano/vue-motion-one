@@ -4,7 +4,7 @@ export default defineConfig({
   entry: ['src/index.ts'],
   clean: true,
   format: ['cjs', 'esm'],
-  external: ['@motionone/animation', '@motionone/dom'],
+  external: ['motion/react', 'motion'],
   dts: true,
   minify: false,
 })
