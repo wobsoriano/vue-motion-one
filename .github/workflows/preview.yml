@@ -24,11 +24,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Prepare tsconfig
-        run: pnpm dev:prepare
-
       - name: Build
-        run: pnpm prepack
+        run: pnpm build
 
       - name: Create a snapshot version
         id: snapshot
