@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/wobsoriano/vue-motion-one.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "vue",
     "motion",
