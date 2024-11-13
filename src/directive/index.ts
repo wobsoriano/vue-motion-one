@@ -1,17 +1,18 @@
 import type { DOMKeyframesDefinition, DynamicAnimationOptions } from 'motion/react'
 import {
+  animate,
+} from 'motion'
+
+import {
   type Directive,
   type DirectiveBinding,
   inject,
-  InjectionKey,
+  type InjectionKey,
   type Plugin,
   reactive,
   readonly,
   type VNode,
 } from 'vue'
-import {
-  animate,
-} from 'motion'
 
 // TODO: Import this later in motion
 type AnimationPlaybackControls = any
