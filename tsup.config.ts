@@ -6,5 +6,5 @@ export default defineConfig({
   format: ['cjs', 'esm'],
   external: ['@motionone/animation', '@motionone/dom'],
   dts: true,
-  minify: true,
+  minify: false,
 })

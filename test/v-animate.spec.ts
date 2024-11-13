@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
 import { defineComponent } from 'vue'
 import { describe, expect, it } from 'vitest'
-import { AnimateDirective } from '../src'
+import { vAnimate } from '../src'
 
 const App = defineComponent({
   template: `<template>
-    <div v-animate :keyframes="{ transform: 'rotate(45deg)' }" ref="box">Box</div>
+    <div v-animate="{ keyframes: { transform: 'rotate(45deg)' } }" ref="box">Box</div>
   </template>
   `,
 })
@@ -13,7 +13,7 @@ const App = defineComponent({
 const wrapper = mount(App, {
   global: {
     directives: {
-      animate: AnimateDirective(),
+      animate: vAnimate,
     },
   },
 })

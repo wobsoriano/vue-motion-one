@@ -2,71 +2,40 @@ import type {
   Directive,
   DirectiveBinding,
   Plugin,
-  VNode,
 } from 'vue'
-import type {
-  AnimationControls,
-} from '@motionone/types'
 import {
   animate,
 } from 'motion'
+import type { DOMKeyframesDefinition, DynamicAnimationOptions } from 'motion/react'
 
-const motionState: Record<string, AnimationControls> = {}
+const createOrUpdateAnimation = (el: HTMLElement | SVGElement, binding: DirectiveBinding<{
+  keyframes: DOMKeyframesDefinition
+  options?: DynamicAnimationOptions
+}>) => {
+  // Cleanup existing animation
+  // @ts-expect-error: Check instance in element for unmounting
+  el.__internal_motion_instance?.stop()
 
-export const AnimateDirective = (): Directive<HTMLElement | SVGElement> => {
-  const register = (
-    el: HTMLElement | SVGElement,
-    binding: DirectiveBinding,
-    node: VNode<
-    any,
-    HTMLElement | SVGElement,
-    Record<string, any>
-    >,
-  ) => {
-    // Get instance key if possible (binding value or element key in case of v-for's)
-    const key = binding.value || node.key
-
-    // Cleanup previous animation if it exists
-    if (key && motionState[key]) motionState[key].stop()
-
-    if (!node.props?.keyframes) {
-      console.error(
-        'Keyframes prop is required!',
-      )
-    }
-
-    const animation = animate(
-      el,
-      node.props?.keyframes,
-      node.props?.options,
-    )
-
-    if (key)
-      motionState[key] = animation
-
-    // Pass the motion instance via the local element
-    // @ts-expect-error: Attach instance to element for unmounting
-    el.motionInstance = animation
-  }
-
-  const unregister = (el: HTMLElement | SVGElement) => {
-    // Cleanup the unregistered element animation
-    // @ts-expect-error: Check instance in element for unmounting
-    if (el.motionInstance) el.motionInstance.stop()
-  }
-
-  return {
-    mounted: register,
-    unmounted: unregister,
-  }
+  // Create new animation
+  const { keyframes, options } = binding.value
+  // @ts-expect-error: Attach instance to element for unmounting
+  el.__internal_motion_instance = animate(el, keyframes, options)
 }
 
-export const MotionOnePlugin: Plugin = {
-  install(app) {
-    app.directive('animate', AnimateDirective())
+export const vAnimate: Directive<HTMLElement | SVGElement, {
+  keyframes: DOMKeyframesDefinition
+  options?: DynamicAnimationOptions
+}> = {
+  mounted: createOrUpdateAnimation,
+  updated: createOrUpdateAnimation,
+  unmounted(el) {
+    // @ts-expect-error: Check instance in element for unmounting
+    el.__internal_motion_instance?.stop()
   },
 }
 
-export const useAnimations = () => {
-  return motionState
+export const MotionPlugin: Plugin = {
+  install(app) {
+    app.directive('animate', vAnimate)
+  },
 }

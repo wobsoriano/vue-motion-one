@@ -33,20 +33,15 @@
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "motion": "^10.14.0",
+    "motion": "^11.11.14",
     "vue": "^3.2.0"
   },
-  "dependencies": {
-    "motion": "^10.14.2",
-    "vue": "^3.2.41"
-  },
   "devDependencies": {
+    "vue": "^3.5.12",
+    "motion": "^11.11.14",
     "@antfu/eslint-config": "^0.18.9",
-    "@motionone/animation": "^10.14.0",
-    "@motionone/dom": "^10.14.2",
-    "@motionone/types": "^10.14.0",
-    "@vue/test-utils": "^2.1.0",
-    "bumpp": "^7.2.0",
+    "@vue/test-utils": "^2.4.6",
+    "bumpp": "^9.8.1",
     "eslint": "^8.25.0",
     "happy-dom": "^2.55.0",
     "lint-staged": "^12.3.5",
