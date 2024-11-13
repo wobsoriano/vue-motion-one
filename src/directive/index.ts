@@ -1,72 +1,84 @@
-import type {
-  Directive,
-  DirectiveBinding,
-  Plugin,
-  VNode,
-} from 'vue'
-import type {
-  AnimationControls,
-} from '@motionone/types'
+import type { DOMKeyframesDefinition, DynamicAnimationOptions } from 'motion/react'
 import {
   animate,
 } from 'motion'
 
-const motionState: Record<string, AnimationControls> = {}
+import {
+  type Directive,
+  type DirectiveBinding,
+  inject,
+  type InjectionKey,
+  type Plugin,
+  reactive,
+  readonly,
+  type VNode,
+} from 'vue'
 
-export const AnimateDirective = (): Directive<HTMLElement | SVGElement> => {
-  const register = (
-    el: HTMLElement | SVGElement,
-    binding: DirectiveBinding,
-    node: VNode<
-    any,
-    HTMLElement | SVGElement,
-    Record<string, any>
-    >,
-  ) => {
-    // Get instance key if possible (binding value or element key in case of v-for's)
-    const key = binding.value || node.key
+// TODO: Import this later in motion
+type AnimationPlaybackControls = any
 
-    // Cleanup previous animation if it exists
-    if (key && motionState[key]) motionState[key].stop()
-
-    if (!node.props?.keyframes) {
-      console.error(
-        'Keyframes prop is required!',
-      )
-    }
-
-    const animation = animate(
-      el,
-      node.props?.keyframes,
-      node.props?.options,
-    )
-
-    if (key)
-      motionState[key] = animation
-
-    // Pass the motion instance via the local element
-    // @ts-expect-error: Attach instance to element for unmounting
-    el.motionInstance = animation
-  }
-
-  const unregister = (el: HTMLElement | SVGElement) => {
-    // Cleanup the unregistered element animation
-    // @ts-expect-error: Check instance in element for unmounting
-    if (el.motionInstance) el.motionInstance.stop()
-  }
-
-  return {
-    mounted: register,
-    unmounted: unregister,
-  }
+interface MotionElement extends HTMLElement {
+  __internal_motion_instance?: AnimationPlaybackControls
 }
 
-export const MotionOnePlugin: Plugin = {
+interface MotionSVGElement extends SVGElement {
+  __internal_motion_instance?: AnimationPlaybackControls
+}
+
+interface DirectiveValue {
+  keyframes: DOMKeyframesDefinition
+  options?: DynamicAnimationOptions
+  key?: string
+}
+
+const AnimationsKey = Symbol('animations') as InjectionKey<{ [key: string]: AnimationPlaybackControls | undefined }>
+
+export const MotionPlugin: Plugin = {
   install(app) {
-    app.directive('animate', AnimateDirective())
+    const animationMap = reactive<{ [key: string]: AnimationPlaybackControls | undefined }>({})
+
+    function createOrUpdateAnimation(el: MotionElement | MotionSVGElement, binding: DirectiveBinding<DirectiveValue>, node: VNode) {
+      const key = binding.value.key || node.key as string
+
+      if (key && animationMap[key]) {
+        animationMap[key]?.stop()
+      }
+
+      const { keyframes, options } = binding.value
+      const animateResult = animate(el, keyframes, options)
+
+      if (key) {
+        animationMap[key] = animateResult
+      }
+
+      el.__internal_motion_instance = animateResult
+    }
+
+    const vAnimate: Directive<MotionElement | MotionSVGElement, DirectiveValue> = {
+      mounted: createOrUpdateAnimation,
+      updated: createOrUpdateAnimation,
+      unmounted(el, binding, node) {
+        const key = binding.value.key || node.key as string
+
+        el.__internal_motion_instance?.stop()
+
+        if (key && animationMap[key]) {
+          delete animationMap[key]
+        }
+      },
+    }
+
+    app.directive('animate', vAnimate)
+    app.provide(AnimationsKey, animationMap)
   },
 }
 
-export const useAnimations = () => {
-  return motionState
+export function useAnimations() {
+  const animations = inject(AnimationsKey)
+
+  if (!animations) {
+    throw new Error('useAnimations() was called outside of the MotionPlugin')
+  }
+
+  return readonly(animations)
 }

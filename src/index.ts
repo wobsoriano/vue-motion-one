@@ -1,8 +1,4 @@
 export {
-  MotionOnePlugin,
-  AnimateDirective,
+  MotionPlugin,
   useAnimations,
 } from './directive'
-
-export { useAnimate } from './composables/useAnimate'
-export { useTimeline } from './composables/useTimeline'

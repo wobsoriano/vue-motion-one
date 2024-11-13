@@ -1,74 +1,58 @@
 {
-  "name": "vue-motion-one",
-  "version": "0.3.0",
-  "description": "Animation library for Vue 3 based on Motion One.",
+  "name": "@jsrob/vue-motion",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Vue directive for Motion",
+  "license": "MIT",
+  "homepage": "https://github.com/wobsoriano/vue-motion-one#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/vue-motion-one.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "vue",
     "motion",
     "animation"
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wobsoriano/vue-motion-one.git"
-  },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs"
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
   },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "release": "bumpp --commit --push --tag && npm publish",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "prepublishOnly": "pnpm run build",
+    "prepublishOnly": "pnpm build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "motion": "^10.14.0",
+    "motion": "^11.11.14",
     "vue": "^3.2.0"
   },
-  "dependencies": {
-    "motion": "^10.14.2",
-    "vue": "^3.2.41"
-  },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.18.9",
-    "@motionone/animation": "^10.14.0",
-    "@motionone/dom": "^10.14.2",
-    "@motionone/types": "^10.14.0",
-    "@vue/test-utils": "^2.1.0",
-    "bumpp": "^7.2.0",
-    "eslint": "^8.25.0",
-    "happy-dom": "^2.55.0",
-    "lint-staged": "^12.3.5",
-    "simple-git-hooks": "^2.7.0",
-    "tsup": "^5.12.9",
-    "typescript": "^4.4.3",
-    "vitest": "^0.6.3"
-  },
-  "lint-staged": {
-    "{src,docs,test}/**/*.{js,ts,vue,md,html}": [
-      "eslint --fix"
-    ]
-  },
-  "homepage": "https://github.com/wobsoriano/vue-motion-one#readme",
-  "eslintConfig": {
-    "extends": "@antfu"
-  },
-  "eslintIgnore": [
-    "dist",
-    "node_modules"
-  ],
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "@antfu/eslint-config": "^3.8.0",
+    "@vue/test-utils": "^2.4.6",
+    "bumpp": "^9.8.1",
+    "eslint": "^9.12.0",
+    "eslint-plugin-format": "^0.1.2",
+    "jsdom": "^25.0.1",
+    "motion": "^11.11.14",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.2",
+    "vitest": "^0.6.3",
+    "vue": "^3.5.12"
   }
 }
