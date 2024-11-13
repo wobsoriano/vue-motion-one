@@ -68,7 +68,7 @@ export const MotionPlugin: Plugin = {
     }
 
     app.directive('animate', vAnimate)
-    app.provide('animations', AnimationsKey)
+    app.provide(AnimationsKey, animationMap)
   },
 }
 
